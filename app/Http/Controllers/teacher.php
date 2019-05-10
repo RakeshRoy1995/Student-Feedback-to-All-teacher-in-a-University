@@ -221,8 +221,9 @@ class teacher extends Controller
        $data['faculty']=$request ->faculty;
        $data['department']=$request ->department;
        $data['email']=$request ->email;
-       $data['number']=$request ->number;
        $data['password']=$request ->password;
+       $data['shift']=$request ->shift;
+       $data['batch']=$request ->batch;
        // $image=$_FILES['image'];
        $image=$request->file('image');
        $uploadPath = 'image';
