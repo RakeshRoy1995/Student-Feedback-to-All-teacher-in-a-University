@@ -41,8 +41,16 @@
             <br>
             <input type="text" name="email" class="form-control" value="{{($all_teachers_info->email)}}" autofocus>
             <br>
-            <input type="text" name="number" class="form-control" value="{{($all_teachers_info->number)}}" autofocus>
+            <label>Batch</label>
+            <input type="text" name="batch" class="form-control" value="{{($all_teachers_info->batch)}}" autofocus>
             <br>
+            <div class="form-group">
+              <label>Shift</label>
+              <select class="form-control p-input" name="shift">
+                <option value="DAY">Day</option>
+                <option value="EVENING">Evening</option>
+              </select>
+            </div><br>
             <input type="file" name="image" class="form-control" autofocus>
             <br>
             <input type="password" name="password" class="form-control" value="{{($all_teachers_info->password)}}"><br>
