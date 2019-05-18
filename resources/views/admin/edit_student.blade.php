@@ -67,7 +67,7 @@
      <div id="login-page">
       <div class="container">
          
-        <form class="form-login" action="{{ url('/student_update/'.$all_students_info->id) }}" method="post">
+        <form class="form-login" action="{{ url('/student_update/'.$all_students_info->s_id) }}" method="post">
           {{ csrf_field() }}
           <h2 class="form-login-heading">Update Student Information</h2>
           <div class="login-wrap">
@@ -91,8 +91,10 @@
               </select>
             </div>
             <br>
+            <label>Roll</label>
             <input type="text" name="roll" class="form-control" value="{{($all_students_info->roll)}}" autofocus>
             <br>
+            <label>Batch</label>
             <input type="text" name="batch" class="form-control" value="{{($all_students_info->batch)}}" autofocus>
             <br>
             <input type="text" name="Reg_number" class="form-control" value="{{($all_students_info->Reg_number)}}" autofocus>
