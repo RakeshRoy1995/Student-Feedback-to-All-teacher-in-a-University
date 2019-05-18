@@ -84,30 +84,31 @@
             <table class="table">
             <thead>
             <tr>
-            <th><strong>Name</strong></th>
-            <th><strong>Faculty</strong></th>
-            <th><strong>Department</strong></th>
-            <th><strong>Email</strong></th>
-            <th><strong>Batch</strong></th>
-            <th><strong>Shift</strong></th>
-            <th><strong>Image</strong></th>
-            <th><strong>Teacher ID</strong></th>
-            <th><strong>Edit</strong></th>
-            <th><strong>Delete</strong></th>
+            <th>Name</th>
+            <th>Faculty</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Batch</th>
+            <th>Shift</th>
+            <th>Course Name</th>
+            <th>Image</th>
+            <th>Teacher ID</th>
+            <th>Edit</th>
+            <th>Delete</th>
             </tr>
             </thead>
              <tbody>
               @foreach($all_search_info as $datas)
-              <th><strong>{{$datas->name}}</strong></th>
-              <th><strong>{{$datas->faculty}}</strong></th>
-              <th><strong>{{$datas->department}}</strong></th>
-              <th><strong>{{$datas->email}}</strong></th>
-              <th><strong>{{$datas->batch}}</strong></th>
-              <th><strong>{{$datas->shift}}</strong></th>
-              <th><strong><img src="{{$datas->image}}" style="width:150px; height:75px;" alt=""></strong></th>
-              <th><strong>{{$datas->uid}}</strong>
-               <th><strong><a href="{{url('/teacher_edit/'.$datas->id) }}"><button type="button" class="btn btn-success">Edit</strong></a></th>
-        <th><strong><a href="{{url('/teacher_delete/'.$datas->id) }}"><button type="button" class="btn btn-danger">Delete</strong></a></th>
+              <th>{{$datas->name}}</th>
+              <th>{{$datas->faculty}}</th>
+              <th>{{$datas->department}}</th>
+              <th>{{$datas->email}}</th>
+              <th>{{$datas->batch}}</th>
+              <th>{{$datas->shif
+              <th><img src="{{$datas->image}}" style="width:150px; height:75px;" alt=""></strong></th>
+              <th>{{$datas->uid}}
+               <th><a href="{{url('/teacher_edit/'.$datas->id) }}"><button type="button" class="btn btn-success">Edit</a></th>
+              <th><a href="{{url('/teacher_delete/'.$datas->id) }}"><button type="button" class="btn btn-danger">Delete</a></th>
               </tbody>
               @endforeach                 
             </table>
@@ -120,29 +121,29 @@
         <table class="table table-dark">
         <thead>
         <tr>
-        <th><strong>Name</strong></th>
-        <th><strong>Faculty</strong></th>
-        <th><strong>Department</strong></th>
-        <th><strong>Email</strong></th>
-        <th><strong>Batch</strong></th>
-        <th><strong>Shift</strong></th>
-        <th><strong>Image</strong></th>
-        <th><strong>Teacher ID</strong></th>
-        <th><strong>Edit</strong></th>
-        <th><strong>Delete</strong></th>
+        <th>Name</th>
+        <th>Faculty</th>
+        <th>Department</th>
+        <th>Email</th>
+        <th>Batch</th>
+        <th>Shift</th>
+        <th>Image</th>
+        <th>Teacher ID</th>
+        <th>Edit</th>
+        <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         @foreach($all_teachers_info as $allteachers_info)
-        <th><strong>{{$allteachers_info->name}}</strong></th>
-        <th><strong>{{$allteachers_info->faculty}}</strong></th>
-        <th><strong>{{$allteachers_info->department}}</strong></th>
-        <th><strong>{{$allteachers_info->email}}</strong></th>
-        <th><strong>{{$allteachers_info->batch}}</strong></th>
-        <th><strong>{{$allteachers_info->shift}}</strong></th>
-        <th><strong><img src="{{$allteachers_info->image}}" style="width:150px; height:75px;" alt=""></strong></th>
-        <th><strong>{{$allteachers_info->uid}}</strong></th>
-        <th><strong><a href="{{url('/teacher_edit/'.$allteachers_info->id) }}"><button type="button" class="btn btn-success">Edit</strong></a></th>
+        <th>{{$allteachers_info->name}}</th>
+        <th>{{$allteachers_info->faculty}}</th>
+        <th>{{$allteachers_info->department}}</th>
+        <th>{{$allteachers_info->email}}</th>
+        <th>{{$allteachers_info->batch}}</th>
+        <th>{{$allteachers_info->shift}}</th>
+        <th><img src="{{$allteachers_info->image}}" style="width:150px; height:75px;" alt=""></th>
+        <th>{{$allteachers_info->uid}}</th>
+        <th><a href="{{url('/teacher_edit/'.$allteachers_info->id) }}"><button type="button" class="btn btn-success">Edit</a></th>
         <th><a onclick='javascript:confirmationDelete($(this));return false;' href="{{url('/teacher_delete/'.$allteachers_info->id) }}"  class="btn btn-danger">Delete</a></th>
 
         <!-- <th><strong><a href="{{url('/teacher_delete/'.$allteachers_info->id) }}"><button type="button" class="btn btn-danger">Delete</strong></a></th> -->
