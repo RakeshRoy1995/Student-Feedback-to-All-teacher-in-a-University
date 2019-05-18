@@ -67,7 +67,7 @@
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <h3>Search By any Name/Reg_no/Shift/Depertment/Faculty</h3>
+          <h3>Search By any Name/Reg_no/Shift/Depertment/Faculty/Batch</h3>
           <form class="form-inline mr-auto" method="post" action="{{url('/allstudents')}}">
             {{csrf_field()}}
             <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search">
@@ -86,7 +86,10 @@
             <th><strong>Name</strong></th>
             <th><strong>Faculty</strong></th>
             <th><strong>Department</strong></th>
-            <th><strong>Reg Number</strong></th>
+            <th><strong>Roll</strong></th>
+            <th><strong>Batch</strong></th>
+            <th><strong>Shift</strong></th>
+            <th><strong>Reg No</strong></th>
             <th><strong>Edit</strong></th>
             <th><strong>Delete</strong></th>
             </tr>
@@ -96,9 +99,12 @@
               <th><strong>{{$datas->name}}</strong></th>
               <th><strong>{{$datas->faculty}}</strong></th>
               <th><strong>{{$datas->department}}</strong></th>
+              <th><strong>{{$datas->roll}}</strong></th>
+              <th><strong>{{$datas->batch}}</strong></th>
+              <th><strong>{{$datas->shift}}</strong></th>
               <th><strong>{{$datas->Reg_number}}</strong></th>
-               <th><strong><a href="{{url('/student_edit/'.$datas->id) }}"><button type="button" class="btn btn-success">Edit</strong></a></th>
-               <th><strong><a href="{{url('/student_delete/'.$datas->id) }}"><button type="button" class="btn btn-danger">Delete</strong></a></th>
+               <th><strong><a href="{{url('/student_edit/'.$datas->s_id) }}"><button type="button" class="btn btn-success">Edit</strong></a></th>
+               <th><strong><a href="{{url('/student_delete/'.$datas->s_id) }}"><button type="button" class="btn btn-danger">Delete</strong></a></th>
               </tbody>
               @endforeach                 
             </table>
@@ -132,8 +138,8 @@
 		  <th><strong>{{$all_student_info->batch}}</strong></th>
 		  <th><strong>{{$all_student_info->shift}}</strong></th>
 		  <th><strong>{{$all_student_info->Reg_number}}</strong></th>
-		  <th><strong><a href="{{url('/student_edit/'.$all_student_info->id) }}"><button type="button" class="btn btn-success">Edit</strong></a></th>
-		  <th><strong><a href="{{url('/student_delete/'.$all_student_info->id) }}"><button type="button" class="btn btn-danger">Delete</strong></a></th>
+		  <th><strong><a href="{{url('/student_edit/'.$all_student_info->s_id) }}"><button type="button" class="btn btn-success">Edit</strong></a></th>
+		  <th><strong><a href="{{url('/student_delete/'.$all_student_info->s_id) }}"><button type="button" class="btn btn-danger">Delete</strong></a></th>
 		   
 		</tbody>
 		@endforeach
