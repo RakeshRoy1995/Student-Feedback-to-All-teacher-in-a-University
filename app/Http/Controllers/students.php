@@ -41,8 +41,9 @@ class students extends Controller
        $login_id = Session::get('admin_email');
        if ($login_id) {
        $allstudents_info=DB::table('student_tbl')
-       ->orderBy('id', 'dsec')
-       ->paginate(15);
+       ->orderBy('batch', 'dsec')
+       ->orderBy('roll', 'asc')
+       ->paginate(25);
        return  view('admin.allstudents')
        ->with('all_students_info', $allstudents_info);
      }
@@ -82,7 +83,7 @@ class students extends Controller
       if ($login_id) {
        $allteachers_info=DB::table('student_tbl')
        ->select('*')
-       ->where('id',$id)
+       ->where('s_id',$id)
        ->first();
        // var_dump($allteachers_info) or die();
 
@@ -106,7 +107,7 @@ class students extends Controller
        $data['Reg_number']=$request ->Reg_number;
         
         DB::table('student_tbl')
-        ->where('id',$id)
+        ->where('s_id',$id)
         ->update($data);
         
       Session::put('updated_message','data updated Successfully');
@@ -124,6 +125,7 @@ class students extends Controller
          ->orWhere('department', 'like', '%'.$query.'%')
          ->orWhere('Reg_number', 'like', '%'.$query.'%')
          ->orWhere('shift', 'like', '%'.$query.'%')
+         ->orWhere('batch', 'like', '%'.$query.'%')
          ->paginate(10000000);
     
 
