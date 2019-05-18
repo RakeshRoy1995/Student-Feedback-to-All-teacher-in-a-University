@@ -41,6 +41,8 @@ class add_teachers extends Controller
        $rex['uid'] = $request ->uid;
        $rex['total'] = $request ->total;
 
+       $true = DB::table('la_result')->where('uid', $data['uid'])->doesntExist();
+
        $this->validate($request,[
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,JPEG,PNG,JPG|max:2048',
             'password' =>'required|min:6'
@@ -55,7 +57,9 @@ class add_teachers extends Controller
             $data['image']= $dbUrl;
             if ($image) {
               DB::table('teachar_tbl')->insert($data);
-              DB::table('la_result')->insert($rex); 
+              if ($true) {
+                DB::table('la_result')->insert($rex); 
+              }
             Session::put('message','data Inserted Successfully');
             return Redirect::to('/addteachers');
             }
