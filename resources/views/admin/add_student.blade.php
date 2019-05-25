@@ -95,6 +95,7 @@
 	          <br>
             <select type="text" class="form-control"name="shift" autofocus>
             <option value="DAY">DAY</option>
+            <option value="EVENING">EVENING</option>
             </select><br>
 	          <input type="text" name="batch" class="form-control" placeholder="Batch No" autofocus>
 	          <br>
